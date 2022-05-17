@@ -1,8 +1,8 @@
 name: zjsdk_flutter
-description: A new Flutter project.
+description: zjsdk ads flutter plusin package.
 version: 0.0.1
-author:
-homepage:
+author: kkmm <mamingkangkkmm@gmail.com>
+homepage:https://github.com/HalfOfSunshine/ZjsdkFlutterPlugin.git
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
