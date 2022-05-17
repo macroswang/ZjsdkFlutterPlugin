@@ -11,7 +11,7 @@ A new Flutter project.
                        DESC
   s.homepage         = 'https://github.com/liqiqing/ZJSDK.git'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'mamingkang' => 'mamingkangkkmm@gmail.com' }
+  s.author           = { 'kkmm' => 'cocos_kkmm@163.com' }
   s.source           = { :git => 'https://github.com/HalfOfSunshine/ZjsdkFlutterPlugin.git', :tag => s.version.to_s }
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
