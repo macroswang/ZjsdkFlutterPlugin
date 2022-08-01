@@ -6,18 +6,18 @@ import 'package:zjsdk_flutter/zjsdk_flutter.dart';
 
 /// Widget for banner ad
 class BannerAdView extends StatelessWidget {
-  final String? adId;
-  final double? width;
-  final double? height;
-  final AdCallback? onAdLoad;
-  final AdCallback? onAdShow;
-  final AdCallback? onAdClick;
-  final AdCallback? onAdClose;
-  final AdCallback? onError;
-  final AdCallback? onAdDetailClose;
+  final String adId;
+  final double width;
+  final double height;
+  final AdCallback onAdLoad;
+  final AdCallback onAdShow;
+  final AdCallback onAdClick;
+  final AdCallback onAdClose;
+  final AdCallback onError;
+  final AdCallback onAdDetailClose;
 
   BannerAdView(
-      {Key ?key,
+      {Key key,
       this.adId,
       this.width,
       this.height,
@@ -66,24 +66,25 @@ class BannerAdView extends StatelessWidget {
   }
 
   void _onPlatformViewCreated(int id) {
-    EventChannel eventChannel = EventChannel("com.zjsdk.adsdk/banner_event_$id");
+    EventChannel eventChannel =
+        EventChannel("com.zjsdk.adsdk/banner_event_$id");
     eventChannel.receiveBroadcastStream().listen((event) {
       print('Flutter.Listen--------');
       switch (event["event"]) {
         case "bannerAdViewDidLoad":
-          onAdLoad?.call("bannerAdViewDidLoad","");
+          onAdLoad?.call("bannerAdViewDidLoad", "");
           break;
 
         case "bannerAdViewWillBecomVisible":
-          onAdShow?.call("bannerAdViewWillBecomVisible","");
+          onAdShow?.call("bannerAdViewWillBecomVisible", "");
           break;
 
         case "bannerAdViewDidClick":
-          onAdClick?.call("bannerAdViewDidClick","");
+          onAdClick?.call("bannerAdViewDidClick", "");
           break;
 
         case "bannerAdViewDislike":
-          onAdClose?.call("bannerAdViewDislike","");
+          onAdClose?.call("bannerAdViewDislike", "");
           break;
 
         case "bannerAdDidLoadFail":
@@ -91,7 +92,7 @@ class BannerAdView extends StatelessWidget {
           break;
 
         case "bannerAdViewDidCloseOtherController":
-          onAdDetailClose?.call("bannerAdViewDidCloseOtherController","");
+          onAdDetailClose?.call("bannerAdViewDidCloseOtherController", "");
           break;
       }
     });
